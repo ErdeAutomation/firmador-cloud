@@ -14,4 +14,5 @@ COPY temp/ ./temp/
 EXPOSE 8080
 
 # Ejecutar el firmador y usar el puerto que Clever Cloud le asigne automáticamente
-CMD ["sh", "-c", "java -jar svfe-api-firmador.jar --server.port=${PORT:-8080}"]
+CMD ["java", "-Dserver.port=8080", "-jar", "svfe-api-firmador.jar"]
+
